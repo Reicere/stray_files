@@ -8,5 +8,9 @@
  <project name="LineageOS/android_external_sony_boringssl-compat" path="external/sony/boringssl-compat" remote="github" revision="cm-14.1"  />
  <project name="LineageOS/android_hardware_sony_timekeep" path="hardware/sony/timekeep" remote="github" revision="cm-14.1" />
  <project name="Reicere/proprietary_vendor_lge" path="vendor/lge" remote="github" revision="cm-14.1" />
+ 
+ <project name="Reicere/droid-hal-v410" path="rpm/" revision="master" />
+ <project name="Reicere/droid-config-v410" path="hybris/droid-configs" revision="master" />
+ <project name="Reicere/droid-hal-version-v410" path="hybris/droid-hal-version-v410" revision="master" />
  <!-- End v4xx -->
 </manifest>
