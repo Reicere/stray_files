@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+ <!-- Start v4xx -->
+ <project name="Reicere/android_device_lge_v410" path="device/lge/v410" remote="github" revision="mer/cm-14.1" />
+ <project name="Reicere/android_device_lge_v4xx-common" path="device/lge/v4xx-common" remote="github" revision="cm-14.1" />
+ <project name="Reicere/android_kernel_lge_v4xx" path="kernel/lge/v4xx" remote="github" revision="cm-14.1" />
+ <project name="LineageOS/android_external_sony_boringssl-compat" path="external/sony/boringssl-compat" remote="github" revision="cm-14.1"  />
+ <project name="LineageOS/android_hardware_sony_timekeep" path="hardware/sony/timekeep" remote="github" revision="cm-14.1" />
+ <project name="Reicere/proprietary_vendor_lge" path="vendor/lge" remote="github" revision="cm-14.1" />
+ <!-- End v4xx -->
+</manifest>
