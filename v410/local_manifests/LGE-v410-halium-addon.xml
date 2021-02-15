@@ -31,7 +31,7 @@
   <project groups="pdk,tradefed" name="LineageOS/android_build_kati" path=".extrn/halium/build/kati" revision="bc43789a938c10cb00b81ddf08239c1b4cea48bb" upstream="refs/heads/cm-14.1" />
   <project groups="pdk,tradefed" name="platform/build/soong" path=".extrn/halium/build/soong" remote="aosp" revision="ff019aa4cff6f8636102003ac14de5442ea6758f" upstream="refs/tags/android-7.1.2_r29">
     <linkfile src="root.bp" dest=".extrn/halium/Android.bp" />
-    <linkfile src="bootstrap.bash dest=".extrn/halium/bootstrap.bash" />
+    <linkfile src="bootstrap.bash" dest=".extrn/halium/bootstrap.bash" />
   </project>
   <project path=".extrn/halium/bionic" name="Halium/android_bionic" groups="pdk" remote="hal" />
   <project path=".extrn/halium/development" name="LineageOS/android_development" />
