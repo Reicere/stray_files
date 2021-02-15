@@ -15,6 +15,7 @@
 
   <default revision="refs/heads/cm-14.1"
            remote="github"
+           clone-depth="1"
            sync-c="true"
            sync-j="4" />
 
