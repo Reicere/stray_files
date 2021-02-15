@@ -193,7 +193,6 @@
   <project path=".extrn/halium/hardware/qcom/media-caf/msm8937" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="de0c52ed54b1efad26a9ffcc8074891984c0d682" upstream="cm-14.1-caf-8937" />
   <project path=".extrn/halium/hardware/qcom/media-caf/msm8952" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="726d5c5370704d79ba1b54f361fe7deebd6dba6d" upstream="cm-14.1-caf-8952" />
   <project path=".extrn/halium/hardware/qcom/media-caf/msm8960" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="b28bc2107701cd6386751af7109aee7ad607f8f7" upstream="cm-14.1-caf-8960" />
-  <project path=".extrn/halium/hardware/qcom/media-caf/msm8960" name="Halium/android_hardware_qcom_media" groups="qcom" remote="hal" revision="halium-7.1-caf-8960" />
   <project path=".extrn/halium/hardware/qcom/media-caf/msm8974" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="209a13cf50b52983443d99617c42ea6d2ec325fe" upstream="cm-14.1-caf-8974" />
   <project path=".extrn/halium/hardware/qcom/media-caf/msm8994" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="5142d75125409875f3eeb47a21236cc47848d516" upstream="cm-14.1-caf-8994" />
   <project path=".extrn/halium/hardware/qcom/media-caf/msm8996" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="e84dcfe7bc46f7d6823d2cc76cd9d095748837ba" upstream="cm-14.1-caf-8996" />
