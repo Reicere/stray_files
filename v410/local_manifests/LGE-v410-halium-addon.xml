@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="hal"
+		  fetch="https://github.com"
+		  review="http://review.ubports.com"
+		  revision="refs/heads/halium-7.1" />
+
+  <default revision="refs/heads/cm-14.1"
+           remote="github"
+           clone-depth="1"
+           sync-c="true"
+           sync-j="4" />
+		   
+  <!-- Start v4xx -->
+  <project name="Reicere/android_device_lge_v410" path=".extrn/halium/device/lge/v410" remote="github" revision="cm-14.1" />
+  <project name="Reicere/android_device_lge_v4xx-common" path=".extrn/halium/device/lge/v4xx-common" remote="github" revision="cm-14.1" />
+  <project name="Reicere/android_kernel_lge_v4xx" path=".extrn/halium/kernel/lge/v4xx" remote="github" revision="cm-14.1" />
+  <project name="LineageOS/android_external_sony_boringssl-compat" path=".extrn/halium/external/sony/boringssl-compat" remote="github" revision="cm-14.1"  />
+  <project name="LineageOS/android_hardware_sony_timekeep" path=".extrn/halium/hardware/sony/timekeep" remote="github" revision="cm-14.1" />
+  <project name="Reicere/proprietary_vendor_lge" path=".extrn/halium/vendor/lge" remote="github" revision="cm-14.1" />
+ 
+  <project name="lineageos4microg/android_prebuilts_prebuiltapks" path=".extrn/halium/prebuilts/prebuiltapks" remote="github" revision="master" />
+  <!-- End v4xx -->
+  
+  <project groups="pdk" name="platform/abi/cpp" path=".extrn/halium/abi/cpp" remote="aosp" revision="36b381298a4efb7c293d394d8b1acbda68230989" upstream="refs/tags/android-7.1.2_r29" />
+  
+  <project path=".extrn/halium/build" name="Halium/android_build" groups="pdk,tradefed" remote="hal" >
+    <copyfile src="core/root.mk" dest=".extrn/halium/Makefile" />
+  </project>
+  <project groups="pdk,tradefed" name="platform/build/blueprint" path=".extrn/halium/build/blueprint" remote="aosp" revision="3a89d1ce9fe7a5160ee87ee11f99edbf540020fc" upstream="refs/tags/android-7.1.2_r29" />
+  <project groups="pdk,tradefed" name="LineageOS/android_build_kati" path=".extrn/halium/build/kati" revision="bc43789a938c10cb00b81ddf08239c1b4cea48bb" upstream="refs/heads/cm-14.1" />
+  <project groups="pdk,tradefed" name="platform/build/soong" path=".extrn/halium/build/soong" remote="aosp" revision="ff019aa4cff6f8636102003ac14de5442ea6758f" upstream="refs/tags/android-7.1.2_r29">
+    <linkfile src="root.bp" dest=".extrn/halium/Android.bp" />
+    <linkfile src="bootstrap.bash dest=".extrn/halium/bootstrap.bash" />
+  </project>
+  <project path=".extrn/halium/bionic" name="Halium/android_bionic" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/development" name="LineageOS/android_development" />
+
+
+  <project path=".extrn/halium" name="device/common" groups="pdk-cw-fs,pdk-fs" remote="aosp" revision="d49a18a17d624b41bcf79ad972ebfdb93f4c2045" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/bootable/recovery" name="LineageOS/android_bootable_recovery" groups="pdk" revision="616bf9aae45fa091cee116ee5565460a90849e33" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/device/google/contexthub" name="device/google/contexthub" groups="device,marlin,pdk" remote="aosp" />
+  <project path=".extrn/halium/device/qcom/common" name="lineageos/android_device_qcom_common" remote="github2" revision="d1dacc6c79481f2f1e720a2cb14401a3593c4e26" upstream="cm-14.1" />
+  <project path=".extrn/halium/device/qcom/sepolicy" name="LineageOS/android_device_qcom_sepolicy" revision="96615af72ebc7074d3a939c8f257a38132cfec7b" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/aac" name="LineageOS/android_external_aac" groups="pdk" />
+  <project path=".extrn/halium/external/ant-wireless/antradio-library" name="LineageOS/android_external_ant-wireless_antradio-library" />
+  <project path=".extrn/halium/external/audioflingerglue" name="mer-hybris/audioflingerglue" revision="master" />
+  <project path=".extrn/halium/external/bison" name="platform/external/bison" groups="pdk" remote="aosp" revision="7467d52af437dd3dfea237a6865ab84bf258dee0" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/boringssl" name="LineageOS/android_external_boringssl" groups="pdk" revision="c9d9e0bd7fa17033cfb7cd6e5855b54b861746fa" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" remote="aosp" revision="c2727c35a0a865cb64e7d9b9d9aeda4de058a443" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/bson" name="LineageOS/android_external_bson" revision="ad6fc5dbb5f4369e08f7543b1517c225281900c0" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/busybox" name="Halium/android_external_busybox" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/external/bzip2" name="LineageOS/android_external_bzip2" groups="pdk" revision="0820f67f09cbbbebb6b3991ce94842d4eb86a34f" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/clang" name="platform/external/clang" groups="pdk" remote="aosp" revision="af1dacacb12f2732169a7276e0f4f90822ddd21f" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/compiler-rt" name="Halium/android_external_compiler-rt" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/external/connectivity" name="LineageOS/android_external_connectivity" />
+  <project path=".extrn/halium/external/dlmalloc" name="platform/external/dlmalloc" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/dng_sdk" name="platform/external/dng_sdk" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/droidmedia" name="sailfishos/droidmedia" revision="master" />
+  <project path=".extrn/halium/external/e2fsprogs" name="LineageOS/android_external_e2fsprogs" groups="pdk" revision="016c2c777dbf0ed4bace4a386f2dbfb1ddde1964" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/exfat" name="LineageOS/android_external_exfat" />
+  <project path=".extrn/halium/external/expat" name="platform/external/expat" groups="pdk" remote="aosp" revision="7f23da12fcc8eb92a20ed4c2b758447c4fa77efb" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/f2fs-tools" name="LineageOS/android_external_f2fs-tools" groups="pdk" />
+  <project path=".extrn/halium/external/fec" name="platform/external/fec" remote="aosp" revision="791afbe58ff9f55145c4adf632ab8cc9ca6e5686" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/ffmpeg" name="LineageOS/android_external_ffmpeg" revision="1bd02b0021d8125b0b028cd95b51231c1373e493" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/flac" name="LineageOS/android_external_flac" groups="pdk" revision="e61e7f6ddef053657d27f4549d4ecd18c864a2e3" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/freetype" name="platform/external/freetype" groups="pdk" remote="aosp" revision="ed337850ede0a03e09e802317b5f65912d7405fc" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/fsck_msdos" name="LineageOS/android_external_fsck_msdos" groups="pdk-cw-fs" />
+  <project path=".extrn/halium/external/fuse" name="LineageOS/android_external_fuse" />
+  <project path=".extrn/halium/external/giflib" name="platform/external/giflib" groups="pdk,qcom_msm8x26" remote="aosp" revision="dc07290edccc2c3fc4062da835306f809cea1fdc" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/gptfdisk" name="LineageOS/android_external_gptfdisk" groups="pdk" />
+  <project path=".extrn/halium/external/gtest" name="platform/external/gtest" groups="pdk" remote="aosp" revision="81cb746e0ba7ce98a77b175139c7425fd41021c6" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="pdk-cw-fs" remote="aosp" />
+  <project path=".extrn/halium/external/icu" name="LineageOS/android_external_icu" groups="pdk" revision="3b0dd8c1c79e6dbb340c6b52de75aeced5713566" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/iproute2" name="LineageOS/android_external_iproute2" groups="pdk" />
+  <project path=".extrn/halium/external/iptables" name="LineageOS/android_external_iptables" groups="pdk" />
+  <project path=".extrn/halium/external/jemalloc" name="LineageOS/android_external_jemalloc" groups="pdk" revision="836d53673c7e36381d249618ca238c52d084096a" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/jhead" name="platform/external/jhead" groups="pdk" remote="aosp" revision="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/jsmn" name="platform/external/jsmn" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/jsoncpp" name="platform/external/jsoncpp" groups="pdk-cw-fs" remote="aosp" />
+  <project path=".extrn/halium/external/junit" name="platform/external/junit" groups="pdk-cw-fs,pdk-fs" remote="aosp" revision="77f8b3f30164ea92ca73ebc8a685b12bd4b1512c" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/kernel-headers" name="platform/external/kernel-headers" groups="pdk-cw-fs,pdk-fs" remote="aosp" revision="a4960127a8b1fdc23559c059bd82813529196e5c" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libavc" name="platform/external/libavc" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/libcap" name="platform/external/libcap" remote="aosp" revision="5fc5a50a942e6f863189b52d2a831730b36c3331" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libcap-ng" name="platform/external/libcap-ng" remote="aosp" />
+  <project path=".extrn/halium/external/libcxx" name="platform/external/libcxx" groups="pdk" remote="aosp" revision="d8170174bf66c98fca967b7133783c0c95292993" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" remote="aosp" revision="fb11cb31ea214386a681d2f28b126b310ac53657" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libdrm" name="platform/external/libdrm" groups="pdk" remote="aosp" revision="d6513d7e0f454db11eb469ef9629ff06582a3003" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libgsm" name="platform/external/libgsm" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/libjpeg-turbo" name="platform/external/libjpeg-turbo" groups="pdk" remote="aosp" revision="0141f11c240da93c012a9ed4bb35308d86d77454" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/liblzf" name="platform/external/liblzf" groups="pdk" remote="aosp" revision="a88b9629447deabe8697d2f8fd4cc70aa6e1b563" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libnetfilter_conntrack" name="LineageOS/android_external_libnetfilter_conntrack" />
+  <project path=".extrn/halium/external/libnfc-nci" name="LineageOS/android_external_libnfc-nci" groups="pdk" revision="257864acc5ced9ccc634ca107580254bd91a8ade" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/libnfc-nxp" name="LineageOS/android_external_libnfc-nxp" groups="pdk" revision="978e1ce3fc660546a6e0b4432e2af95e1621ce82" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/libnfnetlink" name="LineageOS/android_external_libnfnetlink" />
+  <project path=".extrn/halium/external/libnl" name="platform/external/libnl" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/libogg" name="platform/external/libogg" groups="pdk" remote="aosp" revision="6dba790f3372d03eee07c693789166ca9fa07b0a" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libopus" name="platform/external/libopus" groups="pdk" remote="aosp" revision="0b99ea7a4849105ed48b8e97f3e41606d19947f5" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libpcap" name="platform/external/libpcap" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/libphonenumber" name="platform/external/libphonenumber" groups="pdk-cw-fs,pdk-fs" remote="aosp" revision="a2958e2a0fadcf63688029b7e6b0ccc5732222a2" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libpng" name="platform/external/libpng" groups="pdk" remote="aosp" revision="106a9f5260a146e74dc1cd755e33b12177df2bb8" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libselinux" name="LineageOS/android_external_libselinux" groups="pdk" revision="e9ed8de2f5866f12cfea4d7b1c61a91fbb710387" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/libtar" name="LineageOS/android_external_libtar" />
+  <project path=".extrn/halium/external/libunwind" name="platform/external/libunwind" groups="pdk" remote="aosp" revision="f7eef920b5a22f5e1635ed61c703b6400758436a" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libunwind_llvm" name="platform/external/libunwind_llvm" remote="aosp" revision="f171e7279d7fa8977bbe25e19019380ee493e885" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libvpx" name="platform/external/libvpx" groups="pdk" remote="aosp" revision="6c1c0df7564174cdb0f89a8cb9e0ccaec9b542be" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/libxml2" name="platform/external/libxml2" groups="pdk-cw-fs,pdk-fs,libxml2" remote="aosp" />
+  <project path=".extrn/halium/external/libyuv" name="platform/external/libyuv" groups="libyuv,pdk-cw-fs,pdk-fs" remote="aosp" revision="f047e7ca6983218eed7703c7afd51fed7bd3b5c9" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/llvm" name="platform/external/llvm" groups="pdk" remote="aosp" revision="f9d1195a27113f6dafba785611690175ad3914eb" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/lz4" name="platform/external/lz4" groups="pdk-cw-fs,pdk-fs" remote="aosp" revision="74ba70e09305e588c3841e0f73f6b3a16703d8a5" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/lzma" name="LineageOS/android_external_lzma" groups="pdk" revision="f48cbddec33db2f2ca6380fc21806022481074f3" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/mdnsresponder" name="platform/external/mdnsresponder" groups="pdk" remote="aosp" revision="18237bfa08172c62b6c8a6fd378d3fbb7d368b47" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/minijail" name="platform/external/minijail" remote="aosp" revision="3213d0fcc6103e444a5ac051314eddacfab2490b" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/mksh" name="LineageOS/android_external_mksh" groups="pdk" />
+  <project path=".extrn/halium/external/nanopb-c" name="platform/external/nanopb-c" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/ntfs-3g" name="LineageOS/android_external_ntfs-3g" />
+  <project path=".extrn/halium/external/pcre" name="platform/external/pcre" groups="pdk" remote="aosp" revision="222bbf4b3fb8e13c21686803e47e31aa3e4ad130" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/piex" name="platform/external/piex" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/pigz" name="LineageOS/android_external_pigz" />
+  <project path=".extrn/halium/external/protobuf" name="Halium/android_external_protobuf" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/external/safe-iop" name="platform/external/safe-iop" groups="pdk" remote="aosp" revision="cd76f998688d145235de78ecd5b340d0eac9239d" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/scrypt" name="platform/external/scrypt" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/selinux" name="platform/external/selinux" groups="pdk" remote="aosp" revision="89ade431ecff217e0ce7752fda81b5e4e404a293" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/sfntly" name="platform/external/sfntly" groups="pdk-cw-fs" remote="aosp" />
+  <project path=".extrn/halium/external/skia" name="Halium/android_external_skia" groups="pdk-cw-fs" remote="hal" />
+  <project path=".extrn/halium/external/sonic" name="platform/external/sonic" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/sonivox" name="platform/external/sonivox" groups="pdk" remote="aosp" revision="2b8b07da239ec5cec2583f0b8cdecf296c920f33" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/speex" name="platform/external/speex" groups="pdk" remote="aosp" revision="468d5f08801712615c39321b1f22f04c63b1277d" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/sqlite" name="platform/external/sqlite" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" remote="aosp" revision="6697c183c48387fb577c5ded9c52fcfa071af2a7" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/stagefright-plugins" name="LineageOS/android_external_stagefright-plugins" revision="931ae6b373e024d6ae5c4935a09cf4a2741104a2" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/stlport" name="LineageOS/android_external_stlport" />
+  <project path=".extrn/halium/external/strace" name="platform/external/strace" groups="pdk-cw-fs" remote="aosp" />
+  <project path=".extrn/halium/external/tinyalsa" name="LineageOS/android_external_tinyalsa" groups="pdk" />
+  <project path=".extrn/halium/external/tinycompress" name="LineageOS/android_external_tinycompress" groups="pdk" />
+  <project path=".extrn/halium/external/toybox" name="LineageOS/android_external_toybox" groups="pdk" />
+  <project path=".extrn/halium/external/tremolo" name="platform/external/tremolo" groups="pdk" remote="aosp" revision="8bb2a0c472bc41a3c1e83d341903ba11ee93098a" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/vulkan-validation-layers" name="platform/external/vulkan-validation-layers" remote="aosp" />
+  <project path=".extrn/halium/external/webp" name="platform/external/webp" groups="pdk,qcom_msm8x26" remote="aosp" revision="45ca9a6b9c394f2edf37526f562eeaf655299fc8" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/external/webrtc" name="platform/external/webrtc" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/external/wpa_supplicant_8" name="LineageOS/android_external_wpa_supplicant_8" groups="pdk" revision="932d1d2be7a69a3f8ab416393a1630d6ded8d731" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/zlib" name="LineageOS/android_external_zlib" groups="pdk" revision="db8bc995325116d222cbbc3c376d5b200ba325e5" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs" remote="aosp" />
+  <project path=".extrn/halium/frameworks/av" name="Halium/android_frameworks_av" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/frameworks/base" name="Halium/android_frameworks_base" groups="pdk-cw-fs" remote="hal" />
+  <project path=".extrn/halium/frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" remote="aosp" revision="d2e35f95915d480fe203d6614df8b0f5d14de0e5" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" remote="aosp" revision="4eb5fac8a0466c674e565ff2c96986c499b439d4" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/frameworks/native" name="Halium/android_frameworks_native" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/frameworks/rs" name="platform/frameworks/rs" groups="pdk" remote="aosp" revision="4e4ddd39cf8ec405dcc48ff1b23067e00a057055" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/halium/audioflingerglue" name="Halium/audioflingerglue" remote="hal" />
+  <project path=".extrn/halium/halium/devices" name="Halium/halium-devices" remote="hal" />
+  <project path=".extrn/halium/halium/hybris-boot" name="Halium/hybris-boot" remote="hal" revision="refs/heads/master" />
+  <project path=".extrn/halium/halium/libhybris" name="Halium/libhybris" remote="hal" revision="refs/heads/halium-7.1" />
+  <project path=".extrn/halium/hardware/akm" name="platform/hardware/akm" remote="aosp" revision="85837c2e77e032a834121ec3b9b6128f691d68a8" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/hardware/broadcom/libbt" name="LineageOS/android_hardware_broadcom_libbt" groups="pdk" revision="971ddaea961e44f0d904283545e25c79b9f7677b" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/broadcom/wlan" name="LineageOS/android_hardware_broadcom_wlan" groups="pdk,broadcom_wlan" revision="71b070f309220be2af6316e3d48a069759b0f33d" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/cyanogen" name="LineageOS/android_hardware_cyanogen" revision="da0e259f65a28ba4446b63694e11259440ca52de" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/google/apf" name="platform/hardware/google/apf" groups="pdk" remote="aosp" revision="f80b9d17d393b75fbb41971a9ecc30b098a00d55" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/hardware/invensense" name="LineageOS/android_hardware_invensense" groups="invensense" revision="1693470c8877f7daf77ade928882fc8642a6b805" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/libhardware" name="Halium/android_hardware_libhardware" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/hardware/libhardware_legacy" name="Halium/android_hardware_libhardware_legacy" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/hardware/marvell/bt" name="platform/hardware/marvell/bt" groups="marvell_bt" remote="aosp" revision="3f33d194e8300816b94d1d7b68b1d48c8f903251" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/hardware/qcom/audio-caf/apq8084" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="a9bf1aa5507d94c89ea3e074d7198e8eb3d1f57b" upstream="cm-14.1-caf-8084" />
+  <project path=".extrn/halium/hardware/qcom/audio-caf/msm8916" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="7a797d40ad8fde4bc7bab23ebe5992d983708f86" upstream="cm-14.1-caf-8916" />
+  <project path=".extrn/halium/hardware/qcom/audio-caf/msm8937" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="9dbd0629b4a1f779351b59e6e27fbab068f01da2" upstream="cm-14.1-caf-8937" />
+  <project path=".extrn/halium/hardware/qcom/audio-caf/msm8952" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="0bf8b308e08a193c996a3897b1206bc86fa0e3b5" upstream="cm-14.1-caf-8952" />
+  <project path=".extrn/halium/hardware/qcom/audio-caf/msm8960" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="01e8f3b2af9a016bdcfd0f9122f63d426dfaf55b" upstream="cm-14.1-caf-8960" />
+  <project path=".extrn/halium/hardware/qcom/audio-caf/msm8974" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="f5a8e83b84201eb736751920473c918def447af0" upstream="cm-14.1-caf-8974" />
+  <project path=".extrn/halium/hardware/qcom/audio-caf/msm8994" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="7da7e5ea5e5a6fac0ef493d225aaa730b355cff9" upstream="cm-14.1-caf-8994" />
+  <project path=".extrn/halium/hardware/qcom/audio-caf/msm8996" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="53c7f7410c3be8c9f87b2702de6f30299090a802" upstream="cm-14.1-caf-8996" />
+  <project path=".extrn/halium/hardware/qcom/audio-caf/msm8998" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="cm-14.1-caf-8998" />
+  <project path=".extrn/halium/hardware/qcom/audio/default" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="3f7e7022a811377980ce66988126250326e7fc88" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/qcom/bootctrl" name="LineageOS/android_hardware_qcom_bootctrl" groups="pdk" revision="b1c3f1ea740e6d616edb483dcaac9b32393b425c" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/qcom/bt" name="LineageOS/android_hardware_qcom_bt" groups="qcom" revision="7a172cecda4338ec2377c28213b9d574936750e0" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/qcom/bt-caf" name="LineageOS/android_hardware_qcom_bt" groups="qcom" revision="328d8af173bfeb4947ebefd707e8c88bb8a05019" upstream="cm-14.1-caf" />
+  <project path=".extrn/halium/hardware/qcom/camera" name="LineageOS/android_hardware_qcom_camera" groups="qcom" revision="d228805ff1cb383c1cfbe2b149767ef0f6566e04" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/qcom/display" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="f3072db9f23da81ed0b2e54008db885dc9fef1fc" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/qcom/display-caf/apq8084" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="e2f4340ea66e979b2e4e7a34dd06955c3af35419" upstream="cm-14.1-caf-8084" />
+  <project path=".extrn/halium/hardware/qcom/display-caf/msm8916" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="6700612a171d328d8198e01cbb6c978ed19a8be6" upstream="cm-14.1-caf-8916" />
+  <project path=".extrn/halium/hardware/qcom/display-caf/msm8937" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="b7a30106765923e77393a511a3b5bd847c9dfa79" upstream="cm-14.1-caf-8937" />
+  <project path=".extrn/halium/hardware/qcom/display-caf/msm8952" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="7b73a212e4050d7cb1ea38aceff0e650f9d0f9ec" upstream="cm-14.1-caf-8952" />
+  <project path=".extrn/halium/hardware/qcom/display-caf/msm8960" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="d222af70988513e8e70d2b15755e21f631493cbb" upstream="cm-14.1-caf-8960" />
+  <project path=".extrn/halium/hardware/qcom/display-caf/msm8974" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="24176c9dffe0dfefd687b466e2ae581d02e56144" upstream="cm-14.1-caf-8974" />
+  <project path=".extrn/halium/hardware/qcom/display-caf/msm8994" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="39bc982df9f0908f4f6276b11f939cdd16beb156" upstream="cm-14.1-caf-8994" />
+  <project path=".extrn/halium/hardware/qcom/display-caf/msm8996" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="0e4f36e95456d47bfa46c1557dc0f02a480648ae" upstream="cm-14.1-caf-8996" />
+  <project path=".extrn/halium/hardware/qcom/display-caf/msm8998" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="cm-14.1-caf-8998" />
+  <project path=".extrn/halium/hardware/qcom/fm" name="Halium/android_hardware_qcom_fm" groups="qcom,qcom_fm" remote="hal" />
+  <project path=".extrn/halium/hardware/qcom/gps" name="LineageOS/android_hardware_qcom_gps" groups="qcom,qcom_gps" revision="05f4309dcfdba6154311f4afb6905d879fb315cf" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/qcom/keymaster" name="LineageOS/android_hardware_qcom_keymaster" groups="qcom,qcom_keymaster" revision="9fa20f36ed356694019d9c26e1a9b09ba44776d7" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/qcom/media" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="f55a6c6aab76e0d4fc5218dd257e8be4de6ebf11" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/apq8084" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="477e1d7f8c33715f87f71d35e9b2a0b626092039" upstream="cm-14.1-caf-8084" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/msm8916" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="ec789248f3ea62ab6449feab36ddc0f43d5c537a" upstream="cm-14.1-caf-8916" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/msm8937" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="de0c52ed54b1efad26a9ffcc8074891984c0d682" upstream="cm-14.1-caf-8937" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/msm8952" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="726d5c5370704d79ba1b54f361fe7deebd6dba6d" upstream="cm-14.1-caf-8952" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/msm8960" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="b28bc2107701cd6386751af7109aee7ad607f8f7" upstream="cm-14.1-caf-8960" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/msm8960" name="Halium/android_hardware_qcom_media" groups="qcom" remote="hal" revision="halium-7.1-caf-8960" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/msm8974" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="209a13cf50b52983443d99617c42ea6d2ec325fe" upstream="cm-14.1-caf-8974" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/msm8994" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="5142d75125409875f3eeb47a21236cc47848d516" upstream="cm-14.1-caf-8994" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/msm8996" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="e84dcfe7bc46f7d6823d2cc76cd9d095748837ba" upstream="cm-14.1-caf-8996" />
+  <project path=".extrn/halium/hardware/qcom/media-caf/msm8998" name="LineageOS/android_hardware_qcom_media" groups="qcom" revision="cm-14.1-caf-8998" />
+  <project path=".extrn/halium/hardware/qcom/wlan" name="LineageOS/android_hardware_qcom_wlan" groups="qcom_wlan" revision="ed62a2fce1cd8f891862ec342c4500de6d49da3c" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/qcom/wlan-caf" name="LineageOS/android_hardware_qcom_wlan" groups="qcom_wlan" revision="93c86319f93c3c0f2f9bcb15fb115d2c180d120a" upstream="cm-14.1-caf" />
+  <project path=".extrn/halium/hardware/ril" name="LineageOS/android_hardware_ril" groups="pdk" revision="5758b0ecdcf31d148816095b7409a16a6bd884ef" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/ril-caf" name="LineageOS/android_hardware_ril" groups="pdk" revision="d8290dde5638aca602d8316d55b0fb1b754f3c40" upstream="cm-14.1-caf" />
+  <project path=".extrn/halium/hardware/ti/omap3" name="platform/hardware/ti/omap3" groups="omap3" remote="aosp" revision="40292fb9eeb2cf0bb95dc818da12ddcae40b931c" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/hardware/ti/omap4" name="LineageOS/android_hardware_ti_omap4" revision="030bec581f3119651680a8849aa8b0c6f94ffffd" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah" remote="aosp" revision="a62514d376a94e27bec5e932aadb67401ca550b0" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/hardware/ti/omap4xxx" name="LineageOS/android_hardware_ti_omap4xxx" groups="omap4" revision="b94c6fe6065530b9b10ac3be53a35906e81a155a" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/ti/wlan" name="LineageOS/android_hardware_ti_wlan" revision="f75d24a45f68dfeabda86d2e8416990d796f9a7e" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/hardware/ti/wpan" name="LineageOS/android_hardware_ti_wpan" revision="bcf2967acf1a644a59cb113891ad618b1a4cad5f" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/libcore" name="LineageOS/android_libcore" groups="pdk" revision="30ff118538833844c0d72d1dc50c69c98b510861" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/libnativehelper" name="platform/libnativehelper" groups="pdk" remote="aosp" revision="8ebb2fb2e4b92592368c1360d49d5dfa16ef56cc" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk" remote="aosp" revision="45562a53b2a5eb7c6e8f400413d19a12c660d7b1" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="pdk,linux" remote="aosp" revision="b660e8f76f1543abf50ebfbdb8d10112d93fec3d" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" groups="pdk,linux,arm" revision="7280ce2399316a5dbd8872e0bfe69435d8719230" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="pdk,linux,arm" remote="aosp" revision="26e93f6af47f7bd3a9beb5c102a5f45e19bfa38a" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" groups="pdk,linux,arm" revision="48ef1e67aa261116d2c244a52a30b8ba044399ff" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" groups="pdk,linux" remote="aosp" revision="1273431a189717842f033573eb8c777e13dd88b7" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" groups="pdk,linux" remote="aosp" revision="73ca99196723f810dad42390d154654354f57c16" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" groups="pdk-fs" remote="aosp" />
+  <project path=".extrn/halium/prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" remote="aosp" revision="6287eb468c5772f5da2c468396bdf0068a4fa2d5" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" remote="aosp" revision="f7e665a1af37619e136cb2b998c076e5316fe937" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="linux,pdk,tradefed" remote="aosp" revision="08c87a043c925cf88a98d73a8f01a9e06fab7cb9" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="linux,pdk,pdk-cw-fs,pdk-fs" remote="aosp" />
+  <project path=".extrn/halium/prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" remote="aosp" revision="23f7de5ba433fc82269ba63c203fe0a3eaf4a680" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" remote="aosp" revision="b5022f03051bf5ad63112659132e3ec0fa6af4ce" upstream="refs/tags/android-7.1.2_r29" />
+  <project path=".extrn/halium/sdk" name="platform/sdk" groups="pdk-cw-fs" remote="aosp" />
+  <project path=".extrn/halium/system/core" name="Halium/android_system_core" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/system/extras" name="LineageOS/android_system_extras" groups="pdk" revision="f30ae7fd7508bed7974045d37b70030e24c7d4e6" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" remote="aosp" />
+  <project path=".extrn/halium/system/keymaster" name="LineageOS/android_system_keymaster" groups="pdk" />
+  <project path=".extrn/halium/system/media" name="LineageOS/android_system_media" groups="pdk" revision="08866864b5657a881f77138cbb4cc62e25101378" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/system/netd" name="Halium/android_system_netd" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/system/qcom" name="LineageOS/android_system_qcom" groups="pdk" />
+  <project path=".extrn/halium/system/security" name="Halium/android_system_security" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/system/sepolicy" name="LineageOS/android_system_sepolicy" groups="pdk" revision="83840c7f863cd30bd0df3c6db3701e39eee2a097" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/system/tools/aidl" name="Halium/android_system_tools_aidl" groups="pdk" remote="hal" />
+  <project path=".extrn/halium/system/vold" name="LineageOS/android_system_vold" groups="pdk" revision="d8d5e6e562037d1a8db12d58a7ec03f155f26841" upstream="refs/heads/cm-14.1" />
+  <project path=".extrn/halium/tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" remote="aosp" />
+  <project path=".extrn/halium/vendor/cm" name="Halium/android_vendor_cm" remote="hal" />
+  <project path=".extrn/halium/vendor/qcom/opensource/cryptfs_hw" name="LineageOS/android_vendor_qcom_opensource_cryptfs_hw" groups="qcom" />
+</manifest>
